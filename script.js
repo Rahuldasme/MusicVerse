@@ -31,6 +31,12 @@ var arr = [
   },
 ];
 
+document.querySelector(".seekbar").addEventListener("click", (e) => {
+  let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
+  document.querySelector(".circle").style.left = percent + "%";
+  currentSong.currentTime = (currentSong.duration * percent) / 100;
+});
+
 var allSongs = document.querySelector("#all-songs");
 var poster = document.querySelector("#left");
 var play = document.querySelector("#play");
