@@ -2,7 +2,7 @@ var arr = [
   {
     songName: "Binks Sake",
     url: "./songs/Binks_no_sake.m4a",
-    img: "./images/brook.jpg",
+    img: "./images/strawhats.png",
   },
   {
     songName: "Purpose is Glorious",
