@@ -31,12 +31,6 @@ var arr = [
   },
 ];
 
-document.querySelector(".seekbar").addEventListener("click", (e) => {
-  let percent = (e.offsetX / e.target.getBoundingClientRect().width) * 100;
-  document.querySelector(".circle").style.left = percent + "%";
-  currentSong.currentTime = (currentSong.duration * percent) / 100;
-});
-
 var allSongs = document.querySelector("#all-songs");
 var poster = document.querySelector("#left");
 var play = document.querySelector("#play");
@@ -61,8 +55,20 @@ function mainFunction() {
   });
   allSongs.innerHTML = clutter;
   audio.src = arr[selectedSong].url;
+
+  document.querySelector(".circle").style.left = "0%";
 }
 mainFunction();
+
+function seekbar() {
+  document.querySelector(".seekbar").addEventListener("click", (det) => {
+    let percent =
+      (det.offsetX / det.target.getBoundingClientRect().width) * 100;
+    document.querySelector(".circle").style.left = percent + "%";
+    audio.currentTime = (audio.duration * percent) / 100;
+  });
+}
+seekbar();
 
 allSongs.addEventListener("click", function (dets) {
   selectedSong = dets.target.id;
