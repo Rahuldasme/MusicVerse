@@ -39,6 +39,7 @@ var forward = document.querySelector("#forward");
 var audio = new Audio();
 var selectedSong = 0;
 var flag = 0;
+poster.style.backgroundImage = `url(images/OIG1.jpeg)`;
 
 function mainFunction() {
   var clutter = "";
@@ -54,18 +55,21 @@ function mainFunction() {
   });
   allSongs.innerHTML = clutter;
   audio.src = arr[selectedSong].url;
-
-  poster.style.backgroundImage = `url(images/OIG1.jpeg)`;
 }
 mainFunction();
 
 allSongs.addEventListener("click", function (dets) {
   selectedSong = dets.target.id;
   mainFunction();
-  poster.style.backgroundImage = `url(${arr[selectedSong].img})`;
+
   play.innerHTML = `<i class="ri-pause-mini-fill"></i>`;
   flag = 1;
   audio.play();
+  if (flag === 0) {
+    poster.style.backgroundImage = `url(images/OIG1.jpeg)`;
+  } else {
+    poster.style.backgroundImage = `url(${arr[selectedSong].img})`;
+  }
 });
 
 play.addEventListener("click", function () {
