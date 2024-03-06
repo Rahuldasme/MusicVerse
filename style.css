@@ -42,11 +42,27 @@ body {
 
 #rightmain {
   z-index: 100;
-  border-radius: 30px;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  /* border-radius: 30px; */
   /* -webkit-filter: blur(5px); */
   background-color: #af3c9d4c;
   overflow-y: auto;
   width: 55%;
+}
+#rightmain::-webkit-scrollbar-track {
+  background: #290024; /* Change the background color of the track */
+}
+
+/* Customize scrollbar thumb */
+#rightmain::-webkit-scrollbar-thumb {
+  background: #790159; /* Change the color of the scrollbar thumb */
+  border-radius: 20px; /* Round the corners of the thumb */
+}
+
+/* Hide scrollbar */
+#rightmain::-webkit-scrollbar {
+  width: 12px; /* Set the width of the scrollbar */
 }
 
 #right {
@@ -279,7 +295,7 @@ body {
     flex-direction: column;
     align-items: center;
     padding: 3vw 1vw;
-    gap: 7vw;
+    gap: 5vw;
     height: 87%;
     width: 100%;
   }
@@ -305,7 +321,7 @@ body {
   }
 
   #rightmain {
-    overflow-y: auto;
+    border-radius: 30px;
     width: 90%;
     height: 80%;
   }
@@ -322,7 +338,7 @@ body {
   }
 
   #player h3 {
-    padding: 18px;
+    padding: 15px;
   }
   .seekbar {
     width: 80%;
