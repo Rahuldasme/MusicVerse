@@ -37,7 +37,7 @@ body {
   border-radius: 30px;
   /* background-image: url(images/monkey.jpeg); */
   background-size: cover;
-  background-position: top;
+  background-position: center;
 }
 
 #rightmain {
